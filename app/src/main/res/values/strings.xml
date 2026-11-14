@@ -1,3 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="app_name">ImplicitIntents</string>
+    <string name="title">Implicit Intents</string>
+
+    <string name="website_hint">Enter website URL</string>
+    <string name="location_hint">Enter location</string>
+    <string name="share_hint">Enter text to share</string>
+
+    <string name="open_website">OPEN WEBSITE</string>
+    <string name="open_location">OPEN LOCATION</string>
+    <string name="share_text">SHARE THIS TEXT</string>
+
 </resources>
