@@ -36,4 +36,27 @@ public class MainActivity extends AppCompatActivity {
         lokacija = findViewById(R.id.editTextTextPostalAddress);
         besedilo = findViewById(R.id.editTextText2);
     }
+
+    public void openWebsite(View view) {
+        String url = spletna.getText().toString().trim();
+
+        if (url.isEmpty()) {
+            Toast.makeText(this, "Vnesi spletni naslov!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (!url.startsWith("https://") && !url.startsWith("http://")) {
+            url = "https://" + url;
+        }
+
+        Uri povezava = Uri.parse(url);
+        Intent intent = new Intent(Intent.ACTION_VIEW, povezava);
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Spletne strani ni mogoče odpreti!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
