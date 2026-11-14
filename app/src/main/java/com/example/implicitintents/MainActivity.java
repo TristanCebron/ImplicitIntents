@@ -1,3 +1,4 @@
+
 package com.example.implicitintents;
 
 import android.content.Intent;
@@ -28,7 +29,16 @@ public class MainActivity extends AppCompatActivity {
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(bars.left, bars.top, bars.right, bars.bottom);
+
+            int odmik = (int) (16 * getResources().getDisplayMetrics().density);
+
+            v.setPadding(
+                    bars.left + odmik,
+                    bars.top + odmik,
+                    bars.right + odmik,
+                    bars.bottom + odmik
+            );
+
             return insets;
         });
 
@@ -59,4 +69,36 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void openLocation(View view) {
+        String kraj = lokacija.getText().toString().trim();
+
+        if (kraj.isEmpty()) {
+            Toast.makeText(this, "Vnesi lokacijo!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        Uri naslov = Uri.parse("geo:0,0?q=" + Uri.encode(kraj));
+        Intent intent = new Intent(Intent.ACTION_VIEW, naslov);
+
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivity(intent);
+        } else {
+            Toast.makeText(this, "Zemljevida ni mogoče odpreti!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void shareText(View view) {
+        String tekst = besedilo.getText().toString().trim();
+
+        if (tekst.isEmpty()) {
+            Toast.makeText(this, "Vnesi besedilo!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        ShareCompat.IntentBuilder.from(this)
+                .setType("text/plain")
+                .setText(tekst)
+                .setChooserTitle("Deli besedilo")
+                .startChooser();
+    }
 }
