@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         String url = spletna.getText().toString().trim();
 
         if (url.isEmpty()) {
-            Toast.makeText(this, "Vnesi spletni naslov!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Enter the website URL!", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
-            Toast.makeText(this, "Spletne strani ni mogoče odpreti!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Unable to open the site!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         String kraj = lokacija.getText().toString().trim();
 
         if (kraj.isEmpty()) {
-            Toast.makeText(this, "Vnesi lokacijo!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Enter the location!", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         if (intent.resolveActivity(getPackageManager()) != null) {
             startActivity(intent);
         } else {
-            Toast.makeText(this, "Zemljevida ni mogoče odpreti!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Unable to open the map!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -91,14 +91,14 @@ public class MainActivity extends AppCompatActivity {
         String tekst = besedilo.getText().toString().trim();
 
         if (tekst.isEmpty()) {
-            Toast.makeText(this, "Vnesi besedilo!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Enter the text!", Toast.LENGTH_SHORT).show();
             return;
         }
 
         ShareCompat.IntentBuilder.from(this)
                 .setType("text/plain")
                 .setText(tekst)
-                .setChooserTitle("Deli besedilo")
+                .setChooserTitle("Share the text")
                 .startChooser();
     }
 }
