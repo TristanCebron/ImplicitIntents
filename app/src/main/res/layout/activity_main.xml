@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -29,8 +28,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:text="@string/open_website"
-        android:onClick="openWebsite" />
+        android:onClick="openWebsite"
+        android:text="@string/open_website" />
 
     <EditText
         android:id="@+id/editTextTextPostalAddress"
@@ -38,15 +37,16 @@
         android:layout_height="wrap_content"
         android:hint="@string/location_hint"
         android:inputType="textPostalAddress"
-        android:minHeight="48dp" />
+        android:minHeight="48dp"
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="30dp"
-        android:text="@string/open_location"
-        android:onClick="openLocation" />
+        android:onClick="openLocation"
+        android:text="@string/open_location" />
 
     <EditText
         android:id="@+id/editTextText2"
@@ -60,7 +60,22 @@
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/share_text"
-        android:onClick="shareText" />
+        android:onClick="shareText"
+        android:text="@string/share_text" />
+
+    <EditText
+        android:id="@+id/editTextPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Call the number"
+        android:inputType="phone"
+        android:minHeight="48dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="166dp"
+        android:layout_height="51dp"
+        android:text="CALL THIS NUMBER" />
 
 </LinearLayout>
