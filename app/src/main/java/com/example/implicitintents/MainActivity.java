@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -26,6 +27,23 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+
+        EditText editTextPhone = findViewById(R.id.editTextPhone);
+        Button buttonCall = findViewById(R.id.button4);
+
+        buttonCall.setOnClickListener(v -> {
+            String phone = editTextPhone.getText().toString();
+
+            if (!phone.trim().isEmpty()) {
+                Uri uri = Uri.parse("tel:" + phone);
+                Intent intent = new Intent(Intent.ACTION_DIAL, uri);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Enter phone number", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets bars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
