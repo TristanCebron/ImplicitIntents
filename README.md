@@ -94,6 +94,12 @@ ImplicitIntents/
 │           └── AndroidManifest.xml
 └── README.md
 ```
+## Screenshots
+<img width="226" height="486" alt="Posnetek zaslona 2026-11-16 093122" src="https://github.com/user-attachments/assets/16fc5797-4aee-435a-a567-574339bf0c58" />
+<img width="229" height="491" alt="Posnetek zaslona 2026-11-16 093031" src="https://github.com/user-attachments/assets/c3ec658b-7113-4890-8965-c456449b0866" />
+<img width="231" height="487" alt="Posnetek zaslona 2026-11-16 092944" src="https://github.com/user-attachments/assets/7544a523-f219-4ab1-81e3-ce682f8b5c70" />
+<img width="224" height="488" alt="Posnetek zaslona 2026-11-16 093141" src="https://github.com/user-attachments/assets/4c5b1053-7eec-4939-a559-da4f4f2f38eb" />
+
 
 ## 🎯 Purpose
 
